@@ -1,0 +1,14 @@
+
+@use './styles/variables' as *;
+
+@font-face {
+  font-family: 'HelveticaNeueMedium';
+  src: url('./font/HelveticaNeueMedium.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// Применение шрифта к всему приложению
+body {
+  font-family: 'HelveticaNeueMedium', sans-serif;
+}

@@ -1,0 +1,46 @@
+@use '../../styles/variables' as *;
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Выравниваем элементы по верхнему краю */
+  background-color: $primary-color;
+  padding: 40px 20px;
+  color: white;
+
+  .footer__contacts {
+    flex: 1;
+    max-width: 50%; /* Ограничение ширины */
+    margin-left: 19%; /* Отступ от левого края */
+
+    .footer__title {
+      font-size: 2rem; /* Заголовок "Контакты" */
+      margin-bottom: 20px;
+    }
+
+    .footer__contact-item {
+      margin-bottom: 15px;
+      font-size: 1.5rem; /* Крупный текст контактов */
+    }
+  }
+
+  .footer__map {
+    flex: 0 0 700px; /* Ширина карты */
+    height: 300px; /* Высота карты */
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  }
+  .footer__link {
+    color: white; /* Цвет текста */
+    text-decoration: underline; /* Подчёркивание ссылки */
+    transition: color 0.3s;
+  
+    &:hover {
+      color: $secondary-color; /* Цвет при наведении */
+    }
+  }
+  
+}
