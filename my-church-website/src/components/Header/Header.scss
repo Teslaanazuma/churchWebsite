@@ -1,0 +1,38 @@
+@use '../../styles/variables' as *; // или можно использовать alias
+
+.header {
+  position: relative;
+  width: 100%;
+  height: 60vh; /* Высота блока */
+}
+
+.header__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../../img/BG.jpeg') no-repeat center center/cover; /* Путь к изображению */
+  filter: blur(2px); /* Размываем фон */
+}
+
+.header__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный слой */
+}
+
+.header__title {
+  position: absolute;
+  top: 50%; /* Центр по вертикали */
+  left: 20%; /* Отступ от левого края */
+  transform: translateY(-50%); /* Для точного центрирования по вертикали */
+  color: white;
+  font-size: 3rem; /* Размер текста */
+
+  font-weight: bold;
+  text-align: left; /* Текст выровнен влево */
+}

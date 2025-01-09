@@ -1,0 +1,177 @@
+@use '../../styles/variables' as *;
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  height: 60px;
+  background-color: $primary-color;
+  position: fixed;
+  top: 0; /* Закрепляем на верхней части страницы */
+  left: 0;
+  right: 0;
+  z-index: 1;
+  transition: top 0.3s ease-in-out; /* Плавное скрытие/появление */
+}
+
+/* Если Navbar должен быть видимым */
+.navbar.visible {
+  top: 0;
+}
+
+/* Если Navbar скрыт */
+.navbar.hidden {
+  top: -60px; /* Скрыть на 60px (можно подрегулировать) */
+}
+
+
+.navbar__logo {
+  flex: 0 0 auto;
+  text-align: left;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-right: 40px;
+
+}
+
+.navbar__logo-img {
+  max-height: 40px; /* Ограничиваем высоту логотипа */
+  width: auto; /* Сохраняем пропорции */
+  transition: transform 0.2s ease; /* Плавная анимация для логотипа */
+ 
+ 
+ 
+  &:hover {
+    transform: scale(1.1); /* Увеличение логотипа при наведении */
+  }
+}
+
+/* Можете добавить стили для логотипа, который используется при открытом меню */
+.navbar__logo-img.larger {
+  max-height: 50px; /* Новый размер логотипа при открытом меню */
+ 
+  
+  &:hover {
+    transform: scale(1.1); /* Увеличение логотипа при наведении */
+  }
+}
+
+
+
+.navbar__links {
+  display: flex;
+  justify-content: space-between;
+  width: 33.33%;
+  height: 100%;
+}
+
+.navbar__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: $link-color;
+  background-color: $primary-color;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    background-color:  $primary-dark; 
+    color: $accent-color;
+  }
+}
+
+/* Скрываем кнопки на маленьких экранах */
+.navbar__menu-button {
+  font-size: 0.9rem; /* Тот же размер шрифта, что и у других кнопок */
+  font-weight: 500; /* Тот же вес шрифта */
+  color: $link-color; /* Тот же цвет текста */
+  background-color: $primary-color; /* Цвет кнопки */
+  text-decoration: none; /* Убираем подчеркивание */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: auto; /* Убираем растягивание кнопки */
+  height: 100%; /* Высота кнопки равна высоте navbar */
+  padding: 0 20px; /* Горизонтальные отступы для кнопки */
+  cursor: pointer; /* Курсор при наведении */
+  transition: transform 0.2s ease, background-color 0.2s ease;
+
+  &:hover {
+    transform: scale(1.1); /* Увеличение при наведении */
+    background-color: $primary-dark;
+    color: $accent-color; /* Изменение цвета текста при наведении */
+  }
+}
+@media (min-width: 834px) {
+  .navbar__menu-button {
+    display: none;
+  }
+}
+/* Медиазапрос для экранов меньше 834px */
+@media (max-width: 834px) {
+  .navbar__links {
+    display: none;
+  }
+
+  .navbar__menu-button {
+    display: flex;
+    margin-left: auto;
+    margin-right: 20px;
+  }
+
+  .navbar__logo {
+    margin-right: 0;
+    margin-left: 20px;
+   
+  }
+
+  .navbar {
+    justify-content: flex-start;
+  }
+}
+
+/* Overlay меню */
+.navbar__menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $primary-color; /* Используем primary-color */
+  display: flex;
+  flex-direction: column; /* Элементы теперь будут располагаться в столбик */
+  justify-content: flex-start; /* Выравнивание по верху */
+  align-items: flex-start; /* Выравнивание по левому краю */
+  padding: 20px; /* Отступы вокруг */
+
+}
+
+
+/* Ссылки в открытом меню */
+.navbar__menu-content {
+  display: flex;
+  flex-direction: column; /* Располагаем ссылки в столбик */
+  align-items: flex-start; /* Ссылки слева */
+  width: 100%; /* Ссылки будут занимать всю ширину */
+}
+
+.navbar__menu-link {
+  font-size: 3rem;
+  color: $link-color;
+  text-decoration: none;
+  margin: 15px 0; /* Расстояние между ссылками */
+  width: 100%; /* Ссылки будут растягиваться на всю ширину контейнера */
+
+  &:hover {
+    color: $accent-color;
+  }
+}
