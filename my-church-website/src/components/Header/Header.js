@@ -1,12 +1,14 @@
 import React from 'react';
-import './Header.scss';  // Импортируем SCSS
+import './Header.scss';
 
 function Header() {
   return (
     <header className="header">
       <div className="header__background" /> {/* Фоновое изображение */}
-      <div className="header__overlay" /> {/* Полупрозрачный слой */}
-      <h1 className="header__title">церковь ЕХБ "Скала"</h1> {/* Заголовок */}
+      <h1 className="header__title">
+        <span>церковь</span>
+        <span>ЕХБ "Скала"</span>
+      </h1> {/* Заголовок */}
     </header>
   );
 }

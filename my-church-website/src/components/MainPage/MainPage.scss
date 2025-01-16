@@ -4,64 +4,30 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start; /* Выравнивание по левому краю */
+  align-items: flex-start;
   width: 100%;
-  padding: 20px;
-}
+  padding-block-end: 10%;
+  .mainpage__title {
+    font-family: 'BlackGold', sans-serif; /* Используем шрифт BlackGold */
+    font-size: 4rem;
+    color: $primary-color; // Основной цвет заголовка
+    width: 100%;
+    max-width: 40%; // Ограничиваем ширину заголовка
+    margin-left: 5%;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    text-align: justify;
+  }
 
-.mainpage__title {
-  font-size: 2rem; /* Размер заголовка */
-  font-weight: bold;
-  width: 100%; /* Ширина 100% */
-  max-width: 40%; /* Максимальная ширина 40% */
-  margin-left: 19%; /* Отступ от левого края */
-  line-height: 1.6;
-  margin-bottom: 20px;
-  text-align: justify; /* Выравнивание текста по ширине */
-}
-
-.mainpage__text {
-  width: 100%; /* Ширина текста 100% */
-  max-width: 40%; /* Ограничиваем ширину текста */
-  margin-left: 19%; /* Отступ от левого края */
-  font-size: 1.5rem;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  text-align: justify; /* Выравнивание текста по ширине */
-}
-
-.mainpage__content {
-  position: relative;
-  width: 50%; /* Половина экрана по ширине */
-  left: 20%; /* Отступ от левого края */
-  font-size: 1.5rem;
-  line-height: 1.6;
-}
-
-.mainpage__content p {
-  margin-bottom: 20px; /* Расстояние между абзацами */
-}
-
-.mainpage__list {
-  width: 100%;
-  max-width: 40%;
-  margin-left: 19%;
-  padding: 0;
-  list-style-type: none; /* Убираем стандартные маркеры */
-}
-
-.mainpage__list-item {
-  font-size: 1.5rem;
-  line-height: 1.8;
-  margin-bottom: 15px;
-  text-align: justify;
-  position: relative;
- 
-}
-
-.mainpage__list-item::before {
-
-  position: absolute;
-  left: 0;
-  font-size: 1.5rem;
+  .mainpage__text {
+    font-family: 'Evolventa', sans-serif;
+    color: $primary-color; // Основной цвет заголовка
+    width: 100%;
+    max-width: 60%; // Ограничиваем ширину текста
+    margin-left: 5%;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+  }
 }
