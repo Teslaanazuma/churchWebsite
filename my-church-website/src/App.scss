@@ -1,0 +1,30 @@
+
+@use './styles/variables' as *;
+
+@font-face {
+  font-family: 'HelveticaNeueMedium';
+  src: url('./font/HelveticaNeueMedium.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NeutralSans-Regular';
+  src: url('./font/NeutralSans-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BlackGold';
+  src: url('./font/BlackGoldVPRegular.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Evolventa';
+  src: url('./font/Evolventa-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
