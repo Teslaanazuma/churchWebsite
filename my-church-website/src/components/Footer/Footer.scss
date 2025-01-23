@@ -10,7 +10,7 @@
   align-items: flex-start; /* Выравниваем элементы по верхнему краю */
   background-color: $primary-color;
   color: white;
-  padding-top:60px; /* Уменьшаем отступы для меньших экранов */
+  padding-top:40px; /* Уменьшаем отступы для меньших экранов */
   height: 500px; 
   
   .footer__contacts {
@@ -26,6 +26,7 @@
     }
 
     .footer__contact-item {
+      font-size: 1.5rem;
       display: flex;
       flex-direction: column;
       margin-bottom: 10px; /* Отступ между контактами */
@@ -40,7 +41,7 @@
     position: absolute;
     right: 5%; /* Отступ от правого края */
     width: 50%; /* Ширина карты на обычных экранах */
-    height: 450px; /* Высота карты */
+    height: 350px; /* Высота карты */
     margin-top: 20px; /* Отступ сверху карты */
     iframe {
       width: 100%;
@@ -72,7 +73,7 @@
     }
 
     .footer__contact-item {
-      font-size: 1.5rem; /* Увеличиваем размер шрифта для контактов */
+      font-size: 1rem; /* Увеличиваем размер шрифта для контактов */
     }
 
     .footer__title {
@@ -82,7 +83,7 @@
     .footer__map {
       position: static; /* Убираем absolute позиционирование */
       width: 100%; /* Карта занимает всю ширину */
-      height: 550px; /* Увеличиваем высоту карты для мобильных */
+      height: 350px; /* Увеличиваем высоту карты для мобильных */
       margin-top: 30px; /* Отступ сверху */
       margin-right: 0; /* Убираем отступ справа */
     }

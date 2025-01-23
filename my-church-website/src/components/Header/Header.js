@@ -4,11 +4,11 @@ import './Header.scss';
 function Header() {
   return (
     <header className="header">
-      <div className="header__background" /> {/* Фоновое изображение */}
+      <div className="header__background" />
       <h1 className="header__title">
-        <span>церковь</span>
-        <span>ЕХБ "Скала"</span>
-      </h1> {/* Заголовок */}
+        <span>Церковь Евангельских</span>
+        <span>Христиан Баптистов "Скала"</span>
+      </h1>
     </header>
   );
 }
