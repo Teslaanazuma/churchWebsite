@@ -1,85 +1,58 @@
-@use '../../styles/variables' as *; // или можно использовать alias
+@use '../../styles/variables' as *;
 
 .header {
   position: relative;
   width: 100%;
-  height: 60vh; /* Высота блока */
-  margin-top: 100px; /* Отступ сверху */
-  margin-bottom: 50px; /* Отступ снизу */
-}
-
-.header__background {
-  position: absolute;
-  top: 0;
-  left: 5%; /* Сдвигаем картинку на 20% от левого края */
-  width: 400px; /* Ширина картинки 400px */
-  height: 600px; /* Высота картинки 600px */
-  background: url('../../img/BG.jpeg') no-repeat center center/cover; /* Путь к изображению */
-  background-size: cover; /* Сохраняем картинку четкой */
-  border-radius: 60px; /* Закругленные углы */
-}
-
-.header__overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* Убрали полупрозрачный слой */
-}
-
-.header__title {
-  font-family: 'BlackGold', sans-serif; /* Используем шрифт BlackGold */
-  position: absolute;
-  font-weight: normal;
-  font-style: normal;
-  top: 40%; /* Центр по вертикали */
-  right: 5%; /* Отступ от правого края 20% */
-  transform: translateY(-50%); /* Центровка по вертикали */
-  color: $primary-color; /* Цвет текста */
-  font-size: 10rem; /* Размер текста */
-  text-align: center; /* Центрируем текст по горизонтали */
-  display: flex;
-  flex-direction: column; /* Строки в столбик */
-  justify-content: center; /* Вертикальное выравнивание */
-  align-items: center; /* Горизонтальное выравнивание */
-}
-
-.header__title span {
-  display: block; /* Каждое слово в отдельной строке */
-}
-
-
-@media (max-width: 1515px) {
-  .header {
-    gap: 40px; /* Увеличиваем расстояние между элементами */
-  }
-
-  .header__title {
-    font-size: 5rem; /* Уменьшаем размер шрифта */
-  }
-}
-@media (max-width: 1024px) {
-  .header__title {
-    font-size: 3.6rem; /* Уменьшаем размер шрифта */
-  }
-}
-// Адаптивные стили для экранов меньше 834px
-@media (max-width: 834px) {
-  .header {
-    gap: 50px; /* Увеличиваем расстояние между элементами */
-  }
-
-  .header__title {
-    font-size: 3.2rem; /* Уменьшенный шрифт */
-    margin-top: 350px; /* Отступ от нижней границы картинки */
-    left: 5%; /* Теперь текст сдвигается от левого края */
-    right: initial; /* Убираем правый отступ */
-    text-align: left; /* Текст выравнивается по левому краю */
-  }
+  height: 500px; /* Высота блока */
+  margin: 0; /* Убираем отступы */
 
   .header__background {
-    width: 300px; /* Уменьшаем размеры изображения */
-    height: 450px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../../img/BG.png') no-repeat center center;
+    background-size: cover;
+    filter: blur(1.5px); /* Эффект размытия */
+    z-index: -1; /* Слой под текстом */
+    background-position: center 70%; /* Смещает изображение на 80% высоты */
+
   }
+
+  .header__title {
+    position: absolute;
+    top: 50%; /* Центр по вертикали */
+    left: 50%; /* Центр по горизонтали */
+    transform: translate(-50%, -50%); /* Центрирование */
+    width: 80%; /* Задаем ширину контейнера текста */
+    max-width: 1200px; /* Максимальная ширина текста */
+    font-family: 'BlackGold', sans-serif;
+    font-size: 4rem;
+    font-weight: normal;
+    color: $link-color; /* Цвет текста */
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Строки в столбик */
+    gap: 10px; /* Расстояние между строками */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); /* Тень для текста */
+  }
+  
+  
+
+  @media (max-width: 1024px) {
+    .header__title {
+      font-size: 3rem; /* Размер текста для средних экранов */
+    }
+  }
+
+  @media (max-width: 834px) {
+    .header__title {
+      font-size: 1.8em; /* Уменьшаем размер текста */
+    }
+  }
+
+
+  
+ 
 }
