@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/churchWebsite/static/css/main.e151dbe0.css",
+    "main.js": "/churchWebsite/static/js/main.a096b2e2.js",
+    "static/js/488.406769ac.chunk.js": "/churchWebsite/static/js/488.406769ac.chunk.js",
+    "static/media/BG.png": "/churchWebsite/static/media/BG.b64fa0ac0af15e6416c6.png",
+    "static/media/HelveticaNeueMedium.otf": "/churchWebsite/static/media/HelveticaNeueMedium.38884ffafe8888205009.otf",
+    "static/media/BlackGoldVPRegular.ttf": "/churchWebsite/static/media/BlackGoldVPRegular.3d66a70c9053f0f8a203.ttf",
+    "static/media/Evolventa-Regular.ttf": "/churchWebsite/static/media/Evolventa-Regular.bea4dadebf6ff7f13e29.ttf",
+    "static/media/NeutralSans-Regular.otf": "/churchWebsite/static/media/NeutralSans-Regular.4e90b0fbe167488644ff.otf",
+    "index.html": "/churchWebsite/index.html",
+    "main.e151dbe0.css.map": "/churchWebsite/static/css/main.e151dbe0.css.map",
+    "main.a096b2e2.js.map": "/churchWebsite/static/js/main.a096b2e2.js.map",
+    "488.406769ac.chunk.js.map": "/churchWebsite/static/js/488.406769ac.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e151dbe0.css",
+    "static/js/main.a096b2e2.js"
+  ]
+}
