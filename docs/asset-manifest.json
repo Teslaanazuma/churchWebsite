@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.160a656f.css",
-    "main.js": "/static/js/main.f5b5b271.js",
-    "static/js/488.406769ac.chunk.js": "/static/js/488.406769ac.chunk.js",
-    "static/media/BG.png": "/static/media/BG.b64fa0ac0af15e6416c6.png",
-    "static/media/HelveticaNeueMedium.otf": "/static/media/HelveticaNeueMedium.38884ffafe8888205009.otf",
-    "static/media/BlackGoldVPRegular.ttf": "/static/media/BlackGoldVPRegular.3d66a70c9053f0f8a203.ttf",
-    "static/media/Evolventa-Regular.ttf": "/static/media/Evolventa-Regular.bea4dadebf6ff7f13e29.ttf",
-    "static/media/NeutralSans-Regular.otf": "/static/media/NeutralSans-Regular.4e90b0fbe167488644ff.otf",
-    "index.html": "/index.html",
-    "main.160a656f.css.map": "/static/css/main.160a656f.css.map",
-    "main.f5b5b271.js.map": "/static/js/main.f5b5b271.js.map",
-    "488.406769ac.chunk.js.map": "/static/js/488.406769ac.chunk.js.map"
+    "main.css": "/churchWebsite/static/css/main.e151dbe0.css",
+    "main.js": "/churchWebsite/static/js/main.a096b2e2.js",
+    "static/js/488.406769ac.chunk.js": "/churchWebsite/static/js/488.406769ac.chunk.js",
+    "static/media/BG.png": "/churchWebsite/static/media/BG.b64fa0ac0af15e6416c6.png",
+    "static/media/HelveticaNeueMedium.otf": "/churchWebsite/static/media/HelveticaNeueMedium.38884ffafe8888205009.otf",
+    "static/media/BlackGoldVPRegular.ttf": "/churchWebsite/static/media/BlackGoldVPRegular.3d66a70c9053f0f8a203.ttf",
+    "static/media/Evolventa-Regular.ttf": "/churchWebsite/static/media/Evolventa-Regular.bea4dadebf6ff7f13e29.ttf",
+    "static/media/NeutralSans-Regular.otf": "/churchWebsite/static/media/NeutralSans-Regular.4e90b0fbe167488644ff.otf",
+    "index.html": "/churchWebsite/index.html",
+    "main.e151dbe0.css.map": "/churchWebsite/static/css/main.e151dbe0.css.map",
+    "main.a096b2e2.js.map": "/churchWebsite/static/js/main.a096b2e2.js.map",
+    "488.406769ac.chunk.js.map": "/churchWebsite/static/js/488.406769ac.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.160a656f.css",
-    "static/js/main.f5b5b271.js"
+    "static/css/main.e151dbe0.css",
+    "static/js/main.a096b2e2.js"
   ]
 }
