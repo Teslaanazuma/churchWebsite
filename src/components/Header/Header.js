@@ -11,15 +11,15 @@ function Header() {
        </h1>
    
     <div className="header__contacts">
-      <h2 className="header__contacts_title">Контакты</h2>
-      <p className="header__contact-item">Адрес: Smetanova 20, Brno</p>
-      <p className="header__contact-item">
+      <h2 className="header__contacts__title">Контакты</h2>
+      <p className="header__contacts__item">Адрес: Smetanova 20, Brno</p>
+      <p className="header__contacts__item">
         Электронная почта:
         <a href="mailto:skala.church.brno@gmail.com" className="header__link">
           {' '}skala.church.brno@gmail.com
         </a>
       </p>
-      <p className="header__contact-item">
+      <p className="header__contacts__item">
         <span>Время служений:</span>
         <span>Воскресенье, 12:30</span>
       </p>

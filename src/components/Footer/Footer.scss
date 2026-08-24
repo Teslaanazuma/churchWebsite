@@ -1,7 +1,6 @@
 @use '../../styles/variables' as *;
 .footer {
   font-family: 'HelveticaNeueLight', sans-serif;
-  margin-top: 20%;
   width: 100%;
   display: flex;
   flex-direction: column; /* ВАЖНО */
@@ -10,40 +9,48 @@
   padding-top: 40px;
   min-height: 500px;
 
-  .footer__title {
-    font-size: 4rem;
-    margin: 20px 0 30px 5%;
-    max-width: 90%;
-  }
+  &__title
+  {
+  font-size: 4rem;
+  margin: 20px 0 30px 5%;
+  max-width: 90%;  
+}
 
-  .footer__map {
-    margin-left: 5%;
-    width: 70%;
-    height: 350px;
+  &__map 
+  {
+  margin-left: 5%;
+  width: 70%;
+  height: 350px;
 
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
+  iframe 
+  {
+  width: 100%;
+  height: 100%;
+  border: 0;
   }
+}
 
   /* Адаптив */
-  @media (max-width: 1000px) {
-    &.footer{
-      margin-top: 0%;
-      padding-top: 0px;
-    }
-    &__map {
-      width: 100%;
-      margin-left: 0;
-      margin-top: 30px;
-    }
-  }
-
-   @media (max-width: 1200px) {
-  .footer__title{
-  font-size: 3rem;
+  @media (max-width: 1000px) 
+  {
+  &.footer
+  {
+  margin-top: 0%;
+  padding-top: 0px;
+  } 
+  &__map 
+  {
+  width: 100%;
+  margin-left: 0;
+  margin-top: 30px;    
+  }   
+}
+   
+  @media (max-width: 1200px) 
+  {
+  &__title
+  {
+     font-size: 3rem;
   }
 }
 }

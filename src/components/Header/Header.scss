@@ -1,72 +1,78 @@
 @use '../../styles/variables' as *;
 
 .header {
- 
   position: relative;
   width: 100%;
   height: 500px; /* Высота блока */
   margin: 0; /* Убираем отступы */
+ 
 
+  &__link   
+  {
+  color: white; /* Цвет текста */
+  text-decoration: underline; /* Подчёркивание ссылки */
+  transition: color 0.3s;
 
-  .header__contacts {
-    position: absolute;
-    top: 80%;
-    
-    flex: 1;
-    color: white;
-    font-family: 'HelveticaNeueLight', sans-serif;
-    max-width: 50%; /* Ограничение ширины */
-    margin-left: 5%; /* Отступ от левого края */
-    margin-top: 20px; /* Отступ от верхнего края футера для контактов */
+  &:hover
+  {
+  color: $secondary-color; /* Цвет при наведении */
+  }  
+}
 
-    .header__contacts_title {
-      font-size: 4rem; /* Заголовок "Контакты" */
-      margin: 0;
-      margin-bottom: 20px; /* Отступ снизу от заголовка */
-    }
+  &__contacts 
+  {
+  position: absolute;
+  top: 80%;
+  flex: 1;
+  color: white;
+  font-family: 'HelveticaNeueLight', sans-serif;
+  max-width: 50%; /* Ограничение ширины */
+  margin-left: 5%; /* Отступ от левого края */
+  margin-top: 20px; /* Отступ от верхнего края футера для контактов */
 
-    .header__contact-item {
-      font-size: 1.8rem;
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 10px; /* Отступ между контактами */
-    }
+     
+  &__item {
+  font-size: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
 
-    .header__contact-item span {
-      display: block;
-    }
-
-     .header__link {
-    color: white; /* Цвет текста */
-    text-decoration: underline; /* Подчёркивание ссылки */
-    transition: color 0.3s;
-
-    &:hover {
-      color: $secondary-color; /* Цвет при наведении */
-    }
+  span 
+  {
+  display: block;
   }
   }
+
+
+  &__title 
+  {
+  font-size: 4rem; /* Заголовок "Контакты" */
+  margin: 0;
+  margin-bottom: 20px; /* Отступ снизу от заголовка */
+  } 
+}
 
   
-  .header__title {
-    position: absolute;
-    top: 35%; /* Центр по вертикали */
-    left: 50%; /* Центр по горизонтали */
-    transform: translate(-50%, -50%); /* Центрирование */
-    width: 80%; /* Задаем ширину контейнера текста */
-    font-family: 'BlackGold', sans-serif;
-    font-weight: normal;
-    font-size: 6rem; /* Размер текста для средних экранов */
-    max-width: 80%; /* Максимальная ширина текста */
-    color: $link-color; /* Цвет текста */
-    text-align: center;
-    display: flex;
-    flex-direction: column; /* Строки в столбик */
-    gap: 10px; /* Расстояние между строками */
-   
-  }
+  &__title 
+  {
+  position: absolute;
+  top: 35%; /* Центр по вертикали */
+  left: 50%; /* Центр по горизонтали */
+  transform: translate(-50%, -50%); /* Центрирование */
+  width: 80%; /* Задаем ширину контейнера текста */
+  font-family: 'BlackGold', sans-serif;
+  font-weight: normal;
+  font-size: 6rem; /* Размер текста для средних экранов */
+  max-width: 80%; /* Максимальная ширина текста */
+  color: $link-color; /* Цвет текста */
+  text-align: center;
+  display: flex;
+  flex-direction: column; /* Строки в столбик */
+  gap: 10px; /* Расстояние между строками */
+}
 
-.header__photo {
+&__photo 
+{
   position: absolute;
   top: 70%;
   right: 2%;
@@ -80,145 +86,207 @@
   background-position: center;
   background-repeat: no-repeat;
   transform: scale(1); /* уменьшаем ещё 10% */
-  /* убираем transform */
-}
-
-@media (max-width: 1000px) {
-
-  &.header {  // или просто .header, но через & лучше
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;   // это центрирует все дочерние элементы
-   
-    
-    justify-content: flex-start;
-    height: auto;  // переопределяем фиксированные 500px
-    min-height: 60vh;
-    padding: 140px 20px 0px;  // больше воздуха от navbar/footer
-    box-sizing: border-box;
-    
-  }
-
-  &__title {
- order: 1;
-    position: static !important;
-    transform: none !important;
-    margin: 0 auto 80px auto !important;   // только снизу отступ, по горизонтали центрируется
-    padding: 0 20px;
-    font-size: 3.5rem;
-    width: 90%;
-    max-width: 900px;
-    text-align: left;             // строки начинаются слева
-    align-self: center !important; // гарантирует центрирование блока
-    left: auto !important;        // на всякий случай сбрасываем возможные left/right из десктопа
-    right: auto !important;          // КЛЮЧЕВОЕ: текст строк начинается слева
-  }
-
-  &__contacts {
-   order: 2;
-    position: static !important;
-    max-width: 90%;
-    margin: 0 auto 50px auto;  // ОГРОМНЫЙ ОТСТУП СНИЗУ — фото уйдёт далеко вниз!
-    text-align: left;
-  }
-
-  &__contacts_title {
-   font-size: 3rem;
-    margin-bottom: 25px;
-  }
-
-  &__photo {
-   order: 3;
-    position: static !important;  // КЛЮЧ: снимаем absolute, теперь в flex-потоке
-    top: auto !important;         // сбрасываем top/right/left
-    left: auto !important;
-    right: auto !important;
-    transform: none !important;
-    width: 90% !important;        // responsive, переопределяем фиксированные 1055px
-    max-width: 650px !important;
-    height: 420px !important;     // пропорционально твоему photo.png (соотношение ~1.56, подгони если нужно)
-    margin: 0 auto 120px auto !important;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 16px;
-  }
 }
 
 
-  @media (max-width: 1852px) {
-    .header__title {
+@media (max-width: 1852px) 
+{
+    &__title {
       font-size: 5rem; /* Размер текста для средних экранов */
     }
-    .header__photo {
+    
+    &__photo {
       transform: scale(0.8); /* уменьшаем ещё 10% */
     }
-  }
+}
 
-   @media (max-width: 1500px) {
-    .header__title {
+@media (max-width: 1500px) 
+{
+    &__title {
       font-size: 4rem; /* Размер текста для средних экранов */
     }
-     .header__photo {
+    
+    &__photo {
         top: 60%;
       left: 27%;
       transform: scale(0.7); /* уменьшаем ещё 10% */
     }
-  }
-  @media (max-width: 1200px) {
+}
   
-  .header__photo {
+
+@media (max-width: 1200px) 
+{
+  &__photo 
+  {
       top: 30%;
       left: 20%;
       transform: scale(0.5); /* уменьшаем ещё 10% */
-    }
-  .header__contacts {
+  }
+  &__contacts 
+  {
    max-width: 90%;
    top: 60%;
-  }
-   .header__contacts_title {
+     
+  &_title 
+  {
   font-size: 3em;
   }
-  .header__title {
+  }
+  
+  &__title 
+  {
       font-size: 3.5em; /* Уменьшаем размер текста */
-   }
+  }
 
-   }
- @media (max-width: 900px) {
-    .header__title {
-      font-size: 3em; /* Уменьшаем размер текста */
-    }
+}
+
+
+@media (max-width: 1000px) 
+{
+  &.header 
+  {  
+  display: flex;
+  flex-direction: column;
+  align-items: center;   // это центрирует все дочерние элементы
+  justify-content: flex-start;
+  height: auto;  // переопределяем фиксированные 500px
+  min-height: 60vh;
+  padding: 140px 20px 0px;  // больше воздуха от navbar/footer
+  box-sizing: border-box;
+  }
+
+  &__title 
+  {
+  order: 1;
+  font-size: 3em; /* Уменьшаем размер текста */
+  position: static;
+  transform: none;
+  margin: 0 auto 80px auto;   // только снизу отступ, по горизонтали центрируется
+  padding: 0 20px;
+  font-size: 3.5rem;
+  width: 90%;
+  max-width: 900px;
+  text-align: left;             // строки начинаются слева
+  align-self: center; // гарантирует центрирование блока
+  left: auto;        // на всякий случай сбрасываем возможные left/right из десктопа
+  right: auto;          // КЛЮЧЕВОЕ: текст строк начинается слева
   }
 
 
-
-
-   @media (max-width: 800px) {
-    .header__photo{
-        transform: scale(0.7)!important; /* уменьшаем ещё 10% */
-        width: 1055px !important;
-        
-    }
-  }
-     @media (max-width: 700px) {
-    .header__photo{
-    margin: 0 auto 0px  !important;
-    height: 676px;
-
-    }
+ &__photo 
+  { 
+      transform: scale(1); /* уменьшаем ещё 10% */
   }
 
+    
 
 
-   @media (max-width: 600px) {
-    .header__contacts {
-       max-width: 80%;
-   top: 50%;
-    }
-      .header__title {
-      font-size: 3em; /* Уменьшаем размер текста */
-    }
+  &__contacts 
+  {
+  order: 2;
+  position: static;
+  max-width: 90%;
+  margin: 0 auto 50px auto;  // ОГРОМНЫЙ ОТСТУП СНИЗУ — фото уйдёт далеко вниз!
+  text-align: left;
+  
+  &__title {
+  font-size: 3rem;
+  margin-bottom: 25px;
+  }
+  &__item {
+  font-size: 1.4rem;
+  }
+}
+
+  &__photo {
+  order: 3;
+  position: static;  // КЛЮЧ: снимаем absolute, теперь в flex-потоке
+  top: auto;         // сбрасываем top/right/left
+  left: auto;
+  right: auto;
+  width: 90%;        // responsive, переопределяем фиксированные 1055px
+  max-width: 650px ;
+  height: 420px;     // пропорционально твоему photo.png (соотношение ~1.56, подгони если нужно)
+  margin: 0 auto 120px auto;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 16px;
+  }
+}
+
+  @media (max-width: 800px) 
+  {
+  &__photo
+  {
+  transform: scale(0.7); /* уменьшаем ещё 10% */    
+  width: 1055px;
+  }
+  }
+  
+  @media (max-width: 700px) 
+  {
+  &__photo
+  {
+  margin: 0 auto 0px;
+  }
   }
 
+ @media (max-width: 600px) 
+  {
+  &__photo
+  {
+  margin: auto 0px; 
+  }
+  
+  &__contacts 
+{
+max-width: 80%;
+top: 50%;
+}
+
+  &__title
+  {
+  font-size: 3em; /* Уменьшаем размер текста */
+  }
+}
+  
+@media (max-width: 500px) 
+{
+&__photo 
+{
+transform: scale(0.6); /* уменьшаем ещё 10% */
+}
+
+&__title 
+{
+font-size: 2em; /* Уменьшаем размер текста */
+}
+}
+
+@media (max-width: 400px) 
+{
+&__title 
+{
+font-size: 1.2em; /* Уменьшаем размер текста */
+}
+          
+&__contacts_title 
+{
+  font-size: 1.5em;
+}
+&_contact__item 
+{
+ font-size: 1.5em;
+}
+&__link  
+{
+font-size: 0.7em;
+}
+&__photo
+{
+transform: scale(0.5); /* уменьшаем ещё 10% */
+}
+
+}
 }
