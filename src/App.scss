@@ -2,7 +2,7 @@
 @use './styles/variables' as *;
 
 @font-face {
-  font-family: 'HelveticaNeueMedium';
+  font-family: 'Helvetical';
   src: url('./font/HelveticaNeueMedium.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
@@ -12,6 +12,12 @@
   font-family: 'NeutralSans-Regular';
   src: url('./font/NeutralSans-Regular.otf') format('opentype');
   font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'HelveticaNeueLight';
+  src: url('./font/HelveticaNeueLight.otf') format('opentype');
+  font-weight: 100;
   font-style: normal;
 }
 

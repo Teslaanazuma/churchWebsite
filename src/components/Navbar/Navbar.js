@@ -1,49 +1,46 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Navbar.scss';
-import logo from '../../img/logo/logo.png'; // Путь к логотипу
+import logo from '../../img/logo/logo.png';
 
 const Navbar = () => {
-  const [showNavbar, setShowNavbar] = useState(true); // Показывать или скрывать Navbar
+  const [showNavbar, setShowNavbar] = useState(true);
 
-  let lastScrollY = 0;
+  const lastScrollY = useRef(0); // фикс ESLint
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
+
       if (currentScrollY > 100) {
-        if (currentScrollY < lastScrollY) {
+        if (currentScrollY < lastScrollY.current) {
           setShowNavbar(true);
         } else {
           setShowNavbar(false);
         }
       }
-      lastScrollY = currentScrollY > 0 ? currentScrollY : 0;
+
+      lastScrollY.current = currentScrollY > 0 ? currentScrollY : 0;
     };
 
     window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <div className={`navbar ${showNavbar ? 'visible' : 'hidden'}`}>
-      <div className="navbar__logo">
-        <img src={logo} alt="Logo" className="navbar__logo-img" />
-      </div>
-      {/* Закомментированные кнопки */}
-      {/* 
-      <div className={`navbar__links`}>
-        <a href="#header" className="navbar__link">Главная</a>
-        <a href="#main-page" className="navbar__link">О нас</a>
-        <a href="#footer" className="navbar__link">Контакты</a>
-      </div>
-      <div className="navbar__menu-button">
-        Меню
-      </div>
-      */}
+  <div className={`navbar ${showNavbar ? 'visible' : 'hidden'}`}>
+     <div className="navbar__logo">
+    <img src={logo} alt="Logo" className="navbar__logo-img" />
     </div>
+     <a
+  href="https://www.instagram.com/skala_church/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="navbar__gallerey-button"
+>
+  Instagram
+</a>
+</div>
+      
   );
 };
 

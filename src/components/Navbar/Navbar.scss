@@ -1,40 +1,52 @@
 @use '../../styles/variables' as *;
 
 .navbar {
-  font-family: 'Evolventa', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 20px;
-  height: 60px;
-  background-color: $primary-color;
+
+  font-family: 'HelveticaNeueLight', sans-serif;
+  display: flex;          /* flex-контейнер для всех элементов */
+  align-items: center;    /* вертикальное центрирование */
+  justify-content: flex-start; /* Элементы слева */
+  padding: 0 3%;
+  height: 100px;
   position: fixed;
-  top: 0; /* Закрепляем на верхней части страницы */
+  top: 0;
   left: 0;
   right: 0;
   z-index: 1;
-  transition: top 0.3s ease-in-out; /* Плавное скрытие/появление */
+  transition: top 0.3s ease-in-out;
+    background-color:  $navbar-color ;
+   background-image: url(../../noiseNav.svg);
 }
 
-/* Если Navbar должен быть видимым */
 .navbar.visible {
+   
   top: 0;
 }
 
-/* Если Navbar скрыт */
 .navbar.hidden {
-  top: -60px; /* Скрыть на 60px (можно подрегулировать) */
+  top: -100px;
 }
 
-
+/* Логотип остаётся слева */
 .navbar__logo {
-  position: absolute;
-  left: 5%; /* Логотип располагается на 20% от левого края */
+  display: flex;
+  align-items: center;
+  margin-left: 5%; /* отступ слева */
+ 
   
+  .navbar__logo-img {
+    max-height: 60px;
+    width: auto;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
 }
 
 .navbar__logo-img {
-  max-height: 40px; /* Ограничиваем высоту логотипа */
+  max-height: 70px; /* Ограничиваем высоту логотипа */
   width: auto; /* Сохраняем пропорции */
   transition: transform 0.2s ease; /* Плавная анимация для логотипа */
  
@@ -110,66 +122,44 @@
 
 
 
-.navbar__menu-button {
- 
-  font-size: 0.9rem; /* Тот же размер шрифта, что и у других кнопок */
-  font-weight: 500; /* Тот же вес шрифта */
-  color: $link-color; /* Цвет текста */
-  background-color: $primary-color; /* Цвет кнопки */
-  text-decoration: none; /* Убираем подчеркивание */
+.navbar__gallerey-button {
+  font-size: 2.5rem;
+  color: $link-color;
+  text-decoration: none;
   text-align: center;
   display: flex;
-  justify-content: center;
   align-items: center;
-  width: auto; /* Убираем растягивание кнопки */
-  height: 100%; /* Высота кнопки равна высоте navbar */
-  padding: 0 20px; /* Горизонтальные отступы для кнопки */
-  cursor: pointer; /* Курсор при наведении */
-  position: relative; /* Для работы псевдоэлемента */
+  height: 100%;
+  margin-left: 20px; /* Расстояние от логотипа */
+  cursor: pointer;
+  position: relative;
 
-  /* Псевдоэлемент для точки и линии */
   &::after {
     content: '';
     position: absolute;
-    bottom: 6px; /* Расположение точки ниже текста */
-    left: 50%; /* Центрируем по горизонтали */
-    width: 6px; /* Размер круга по умолчанию */
-    height: 6px; /* Размер круга по умолчанию */
-    background-color: $link-color; /* Цвет точки */
-    border-radius: 50%; /* Превращаем точку в круг */
-    transform: translateX(-50%); /* Центровка относительно кнопки */
-    transition: all 0.3s ease; /* Плавность анимации */
+    bottom: 6px;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    background-color: $link-color;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    transition: all 0.3s ease;
   }
 
-  /* Анимация при наведении */
   &:hover::after {
-    width: 100%; /* Линия растягивается на ширину кнопки */
-    height: 3px; /* Превращается в линию */
-    border-radius: 5px; /* Закругляем края линии */
-    left: 0; /* Выравниваем линию по левому краю кнопки */
-    transform: none; /* Убираем смещение */
+    width: 100%;
+    height: 3px;
+    border-radius: 5px;
+    left: 0;
+    transform: none;
   }
 }
 
 
-@media (min-width: 834px) {
-  .navbar__menu-button {
-    display: none;
-  }
+.navbar__gallerey-button {
+  display: flex;
 }
-
-/* Медиазапрос для экранов меньше 834px */
-@media (max-width: 834px) {
-  .navbar__links {
-    display: none;
-  }
-
-  .navbar__menu-button {
-    display: flex;
-    margin-left: auto;
-    margin-right: 20px;
-  }
-
   .navbar__logo {
     margin-right: 0;
     margin-left: 20px;
@@ -178,10 +168,10 @@
   .navbar {
     justify-content: flex-start;
   }
-}
+
 
 /* Overlay меню */
-.navbar__menu-overlay {
+.navbar__gallerey-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -198,14 +188,14 @@
 
 
 /* Ссылки в открытом меню */
-.navbar__menu-content {
+.navbar__gallerey-content {
   display: flex;
   flex-direction: column; /* Располагаем ссылки в столбик */
   align-items: flex-start; /* Ссылки слева */
   width: 100%; /* Ссылки будут занимать всю ширину */
 }
 
-.navbar__menu-link {
+.navbar__gallerey-link {
 
   font-size: 3rem;
   color: $link-color;
