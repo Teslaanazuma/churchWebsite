@@ -27,20 +27,26 @@ const Navbar = () => {
   }, []);
 
   return (
-  <div className={`navbar ${showNavbar ? 'visible' : 'hidden'}`}>
-     <div className="navbar__logo">
-    <img src={logo} alt="Logo" className="navbar__logo-img" />
-    </div>
-     <a
-  href="https://www.instagram.com/skala_church/"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="navbar__gallerey-button"
->
-  Instagram
-</a>
-</div>
-      
+    <nav
+      className={`navbar ${showNavbar ? 'visible' : 'hidden'}`}
+      aria-label="Основная навигация"
+    >
+      <div className="navbar__logo">
+        <img
+          src={logo}
+          alt="Логотип церкви «Скала»"
+          className="navbar__logo-img"
+        />
+      </div>
+      <a
+        href="https://www.instagram.com/skala_church/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="navbar__gallerey-button"
+      >
+        Instagram
+      </a>
+    </nav>
   );
 };
 

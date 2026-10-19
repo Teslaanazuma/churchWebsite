@@ -7,20 +7,14 @@ import Main from './components/Main/Main';
 import './App.scss';  // Для общих стилей
 
 function App() {
-  console.log('App is rendering');
-
   return (
     <div>
       <Navbar />
-      <header id="header">
-        <Header />
-      </header>
-      <main id = "main">
+      <Header />
+      <main id="main">
         <Main />
       </main>
-      <footer id="footer">
-        <Footer />
-      </footer>
+      <Footer />
     </div>
   );
 }
